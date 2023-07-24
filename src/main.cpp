@@ -28,6 +28,11 @@ int main(int argc, char* argv[]) {
 		if(resultEC != 0) {
 			rsDecode(Buf);
 		}
+		if(ecmify(Buf)) {
+			printf("Failed to fix.\n");
+		} else if (resultEC) {
+			printf("Successfully fixed!\n");
+		}
 		fwrite(Buf, 1, 2352, newFile);
 		free(Buf);
 	}
