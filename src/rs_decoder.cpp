@@ -122,7 +122,7 @@ int rsDecode(uint8_t* Buf) {
 	memset(qLSBParityMatrixRepaired, 0, sizeof(qLSBParityMatrixRepaired));
 	
 	int i = 0;
-	// while(i < 50) {
+	while(i < 50) {
 		int pResult, qResult;
 		printf("Making decoders.\n");
 		RS::ReedSolomon<24, 2> p_rs_decoder;
@@ -182,14 +182,14 @@ int rsDecode(uint8_t* Buf) {
 				}
 			}
 		}
-		/*if(!ecmify(Buf)) {
+		if(!ecmify(Buf)) {
 			break;
 		}
 		if(pResult && qResult) {
 			break;
-		}*/
+		}
 		i++;
-	// }
+	}
 	
 	return 0; // Work out return value later.
 }
